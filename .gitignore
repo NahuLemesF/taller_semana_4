@@ -1,0 +1,13 @@
+# IntelliJ project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+
+# Build directories
+.gradle/
+build/
+target/
