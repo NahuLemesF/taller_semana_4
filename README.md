@@ -39,7 +39,8 @@ Evolucionar la estrategia de calidad de un producto real para que los requisitos
 | Contexto de negocio diligenciado | [`BUSINESS_CONTEXT.md`](./BUSINESS_CONTEXT.md) | Completado |
 | Refinamiento de historias de usuario (antes vs despues) | [`USER_STORIES_REFINEMENT.md`](./USER_STORIES_REFINEMENT.md) | Completado |
 | Matriz de casos de prueba IA + ajustes del probador | [`TEST_CASES_AI.md`](./TEST_CASES_AI.md) | Completado |
-| Material de socializacion tecnica (diapositivas, PDF, diagramas, enlaces, codigo) | Carpeta `presentacion/` (sugerida) | Pendiente de anexar |
+| Material de socializacion tecnica (diapositivas, PDF, diagramas, enlaces, codigo) | [`Presentacion/`](./Presentacion/) | Completado |
+| Proyecto de automatizacion con patron Screenplay | [`screenplay-example/`](./screenplay-example/) | Completado |
 
 ## Alcance funcional evaluado
 
@@ -66,6 +67,8 @@ Evolucionar la estrategia de calidad de un producto real para que los requisitos
 1. [`BUSINESS_CONTEXT.md`](./BUSINESS_CONTEXT.md)
 2. [`USER_STORIES_REFINEMENT.md`](./USER_STORIES_REFINEMENT.md)
 3. [`TEST_CASES_AI.md`](./TEST_CASES_AI.md)
+4. [`Presentacion/`](./Presentacion/) — Diapositivas sobre el patron Screenplay
+5. [`screenplay-example/`](./screenplay-example/) — Proyecto de automatizacion con Serenity BDD + Screenplay + Gradle
 
 ## Estructura actual del repositorio
 
@@ -74,5 +77,105 @@ Evolucionar la estrategia de calidad de un producto real para que los requisitos
 ├── BUSINESS_CONTEXT.md
 ├── USER_STORIES_REFINEMENT.md
 ├── TEST_CASES_AI.md
-└── README.md
+├── README.md
+├── Presentacion/
+│   └── Patron Screenplay - Presentacion.pdf
+└── screenplay-example/
+    ├── build.gradle
+    ├── gradlew
+    ├── gradlew.bat
+    ├── serenity.properties
+    ├── README.md
+    ├── docker/
+    │   └── docker-compose.yml
+    ├── gradle/
+    │   └── wrapper/
+    │       ├── gradle-wrapper.jar
+    │       └── gradle-wrapper.properties
+    └── src/
+        ├── main/
+        │   └── java/net/serenitybdd/demos/todos/
+        │       ├── pageobjects/
+        │       │   ├── model/
+        │       │   │   ├── TodoStatus.java
+        │       │   │   └── TodoStatusFilter.java
+        │       │   ├── pages/
+        │       │   │   ├── TodoListPage.java
+        │       │   │   └── TodoMVCHomePage.java
+        │       │   └── steps/
+        │       │       └── TodoUserSteps.java
+        │       └── screenplay/
+        │           ├── actions/
+        │           │   └── JSClick.java
+        │           ├── model/
+        │           │   ├── ApplicationInformation.java
+        │           │   ├── TodoStatus.java
+        │           │   └── TodoStatusFilter.java
+        │           ├── questions/
+        │           │   ├── Application.java
+        │           │   ├── ClearCompletedItems.java
+        │           │   ├── CurrentFilter.java
+        │           │   ├── ElementAvailability.java
+        │           │   ├── Placeholder.java
+        │           │   ├── TheItemStatus.java
+        │           │   └── TheItems.java
+        │           ├── tasks/
+        │           │   ├── AddATodoItem.java
+        │           │   ├── AddTodoItems.java
+        │           │   ├── Clear.java
+        │           │   ├── CompleteItem.java
+        │           │   ├── DeleteAllTheItems.java
+        │           │   ├── DeleteAnItem.java
+        │           │   ├── FilterItems.java
+        │           │   ├── Start.java
+        │           │   └── ToggleStatus.java
+        │           └── user_interface/
+        │               ├── TodoList.java
+        │               ├── TodoListApp.java
+        │               └── TodoListItem.java
+        └── test/
+            ├── java/net/serenitybdd/demos/todos/
+            │   ├── cucumber/
+            │   │   ├── CucumberTestSuite.java
+            │   │   ├── MissingTodoItemsException.java
+            │   │   └── steps/
+            │   │       ├── TodoUserActionSteps.java
+            │   │       └── TodoUserSteps.java
+            │   ├── pageobjects/
+            │   │   ├── accessing_the_application/
+            │   │   │   └── LearnAboutTheApplication.java
+            │   │   ├── completing_todos/
+            │   │   │   ├── CompleteATodo.java
+            │   │   │   └── ToggleAllTodos.java
+            │   │   ├── maintain_my_todo_list/
+            │   │   │   ├── ClearCompletedTodos.java
+            │   │   │   ├── DeletingTodos.java
+            │   │   │   └── FilteringTodos.java
+            │   │   └── record_todos/
+            │   │       └── AddNewTodos.java
+            │   └── screenplay/
+            │       ├── accessing_the_application/
+            │       │   └── LearnAboutTheApplication.java
+            │       ├── completing_todos/
+            │       │   └── CompleteATodo.java
+            │       ├── maintain_my_todo_list/
+            │       │   ├── ClearCompletedTodoItems.java
+            │       │   ├── DeletingTodoItems.java
+            │       │   ├── FilteringTodoItems.java
+            │       │   └── HandlingTodosBelongingToSeveralUsers.java
+            │       └── record_todos/
+            │           └── AddNewTodos.java
+            └── resources/
+                ├── cucumber.properties
+                ├── junit-platform.properties
+                ├── logback-test.xml
+                ├── serenity.conf
+                └── features/
+                    └── cucumber/
+                        ├── maintain_my_todo_list/
+                        │   ├── completing_todos.feature
+                        │   ├── deleting_todos.feature
+                        │   └── filtering_todos.feature
+                        └── record_todos/
+                            └── add_new_items_to_the_todo_list.feature
 ```

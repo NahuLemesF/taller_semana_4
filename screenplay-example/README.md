@@ -43,7 +43,7 @@ The overall project structure is shown below:
 
 ## Running the project
 
-To run the project you'll need JDK 1.8 and Maven installed.
+To run the project you'll need JDK 17 and Gradle installed.
 
 ### Screenplay and Cucumber
 
@@ -51,7 +51,7 @@ The first demo shows the integration of Serenity BDD, Screenplay and Cucumber JV
 To run it, execute:
 
 ```
-mvn clean verify -Pcucumber
+./gradlew clean test --tests net.serenitybdd.demos.todos.screenplay.cucumber.features.manage_tasks.ManageTasks
 ```
 
 ### Screenplay and JUnit
@@ -61,7 +61,7 @@ The second demo covers the integration of Serenity BDD, Screenplay and JUnit.
 To run it, execute:
 
 ```
-mvn clean verify -Pscreenplay
+./gradlew clean test --tests net.serenitybdd.demos.todos.screenplay.junit.features.manage_tasks.WhenAddingATodoItem
 ```
 
 ### Page Objects and JUnit
@@ -72,7 +72,7 @@ would have looked if they were implemented using the Page Objects.
 To run it, execute:
 
 ```
-mvn clean verify -Ppageobjects
+./gradlew clean test --tests net.serenitybdd.demos.todos.pageobjects.features.manage_tasks.WhenAddingATodoItem
 ```
 
 ## Reporting
